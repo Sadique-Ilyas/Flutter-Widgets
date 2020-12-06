@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'file:///C:/Users/Sadique/AndroidStudioProjects/flutter_layout_widgets/lib/Routes/Opacity/Opacity2.dart';
+import 'Opacity2.dart';
 
 class OpacityWidget extends StatefulWidget {
   @override

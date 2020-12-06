@@ -27,7 +27,6 @@ class ExpansionPanelWidgetState extends State<ExpansionPanelWidget> {
       children: <Widget>[
         ExpansionPanelList(
           expansionCallback: (index, expanded) {
-            Fluttertoast.showToast(msg: '$index');
             setState(() {
               active = !active;
             });

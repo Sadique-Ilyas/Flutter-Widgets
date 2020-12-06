@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'file:///C:/Users/Sadique/AndroidStudioProjects/flutter_layout_widgets/lib/Routes/PageViewWidget/Page1.dart';
-import 'file:///C:/Users/Sadique/AndroidStudioProjects/flutter_layout_widgets/lib/Routes/PageViewWidget/Page2.dart';
-
+import 'Page1.dart';
+import 'Page2.dart';
 import 'Page3.dart';
 
 class PageViewWidget extends StatefulWidget {

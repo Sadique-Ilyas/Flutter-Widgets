@@ -267,17 +267,10 @@ List<String> getListElements() {
     'About Dialog',
     'Interactive Viewer'
   ];
-  print("------------------------------");
-  print("------------------------------");
-  print("------------------------------");
-  print(items.length);
-  print("------------------------------");
-  print("------------------------------");
-  print("------------------------------");
-  print("------------------------------");
-  print("------------------------------");
   return items;
 }
+
+var recentWidgets = [];
 
 Widget myListView() {
   var listItems = getListElements();
@@ -287,6 +280,12 @@ Widget myListView() {
         title: Text(listItems[index]),
         onTap: () {
           nextRoute(context, listItems[index]);
+          if (!recentWidgets.contains(listItems[index])) {
+            recentWidgets.add(listItems[index]);
+          }
+          if (recentWidgets.length > 5) {
+            recentWidgets.removeAt(0);
+          }
         },
       );
     },
@@ -296,15 +295,6 @@ Widget myListView() {
 }
 
 class ListSearch extends SearchDelegate<String> {
-  var recentWidgets = [
-    'Checkbox',
-    'Circular Progress Indicator',
-    'Date Time Picker',
-    'Data Table',
-    'Drop Down Button',
-    'Flat Button'
-  ];
-
   @override
   List<Widget> buildActions(BuildContext context) {
     // Actions for app Bar
