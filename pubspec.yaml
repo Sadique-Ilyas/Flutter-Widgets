@@ -27,6 +27,7 @@ dependencies:
   fab_circular_menu: ^1.0.0
   vector_math: ^2.0.8
   font_awesome_flutter: 8.4.0
+  location:
   flutter:
     sdk: flutter
 
@@ -45,10 +46,8 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - assets/pic12.jpg
-    - assets/google.jpg
-    - assets/landscapes.jpg
-    - assets/A.gif
+    - assets/
+    - assets/avengers/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

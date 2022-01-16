@@ -27,6 +27,7 @@ import 'package:my_flutter_widgets/Routes/Semantics.dart';
 import 'package:my_flutter_widgets/Routes/Shader%20Mask.dart';
 import 'package:my_flutter_widgets/Routes/Snackbar.dart';
 import 'package:my_flutter_widgets/Routes/Spacer.dart';
+import 'package:my_flutter_widgets/Routes/Switch%20List%20Tile.dart';
 import 'package:my_flutter_widgets/Routes/Tab%20Bar.dart';
 import 'package:my_flutter_widgets/Routes/Toggle%20Buttons.dart';
 import 'package:my_flutter_widgets/Routes/Tween%20Animation%20Builder.dart';
@@ -35,7 +36,7 @@ import 'package:my_flutter_widgets/Routes/data_table.dart';
 import 'package:my_flutter_widgets/Routes/date_time_picker.dart';
 import 'package:my_flutter_widgets/Routes/drop_down_button.dart';
 import 'package:my_flutter_widgets/Routes/flat_button.dart';
-import 'package:my_flutter_widgets/Routes/floating_action_button.dart';
+import 'file:///C:/Users/Sadique/AndroidStudioProjects/my_flutter_widgets/lib/Routes/Floating%20Action%20Button/floating_action_button.dart';
 import 'package:my_flutter_widgets/Routes/form.dart';
 import 'package:my_flutter_widgets/Routes/icon_button.dart';
 import 'package:my_flutter_widgets/Routes/image.dart';
@@ -265,7 +266,8 @@ List<String> getListElements() {
     'Animated Widget [Incomplete]',
     'Checkbox List Tile',
     'About Dialog',
-    'Interactive Viewer'
+    'Interactive Viewer',
+    'Switch List Tile',
   ];
   return items;
 }
@@ -333,7 +335,7 @@ class ListSearch extends SearchDelegate<String> {
     final suggestionsList = query.isEmpty
         ? recentWidgets
         : getListElements()
-            .where((element) => element.startsWith(query))
+            .where((element) => element.toLowerCase().trim().startsWith(query.toLowerCase().trim()))
             .toList();
     return ListView.builder(
       itemBuilder: (context, index) {
@@ -800,6 +802,10 @@ void nextRoute(BuildContext context, String widget) {
     case 'Interactive Viewer':
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => MyInteractiveViewer()));
+      break;
+    case 'Switch List Tile':
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => MySwitchListTile()));
       break;
   }
 }

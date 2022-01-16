@@ -34,10 +34,7 @@ class myRichTextState extends State<myRichText> {
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        Fluttertoast.showToast(msg: "Orange Clicked !!1");
-                      }),
+                    ),
                 TextSpan(
                   text: ' Am always Angry',
                   style: TextStyle(

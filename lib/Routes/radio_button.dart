@@ -15,8 +15,8 @@ class myRadioButton extends StatefulWidget {
 }
 
 class myRadioButtonState extends State<myRadioButton> {
-  String default_choice = "Apple";
-  int default_index = 0;
+  String defaultChoice = "Apple";
+  int defaultIndex = 0;
 
   List<MyChoice> choices = [
     MyChoice(index: 0, choice: "Apple"),
@@ -40,12 +40,12 @@ class myRadioButtonState extends State<myRadioButton> {
                     children: choices
                         .map((data) => RadioListTile(
                               title: Text(data.choice),
-                              groupValue: default_index,
+                              groupValue: defaultIndex,
                               value: data.index,
                               onChanged: (value) {
                                 setState(() {
-                                  default_choice = data.choice;
-                                  default_index = data.index;
+                                  defaultChoice = data.choice;
+                                  defaultIndex = data.index;
                                 });
                               },
                             ))
@@ -57,7 +57,7 @@ class myRadioButtonState extends State<myRadioButton> {
             Padding(
               padding: EdgeInsets.all(14.0),
               child: Text(
-                '$default_choice',
+                '$defaultChoice',
                 style: TextStyle(fontSize: 23.0),
               ),
             )

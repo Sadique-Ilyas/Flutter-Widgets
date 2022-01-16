@@ -38,6 +38,8 @@ class _ClipRRectWidgetState extends State<ClipRRectWidget> {
               ),
             ),
             ClipPath(
+              clipBehavior: Clip.antiAlias,
+              clipper: MyClipper(),
               child: Container(
                 height: 120,
                 width: 120,
@@ -49,4 +51,21 @@ class _ClipRRectWidgetState extends State<ClipRRectWidget> {
       ),
     );
   }
+}
+
+class MyClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    path.lineTo(0.0, size.height);
+    path.quadraticBezierTo(size.width * 0.35, size.height * 0.6,
+        size.width * 0.70, size.height * 0.80);
+    path.quadraticBezierTo(
+        size.width * 0.85, size.height * 0.90, size.width, size.height * 0.8);
+    path.lineTo(size.width, 0.0);
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
